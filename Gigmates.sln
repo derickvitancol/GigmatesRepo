@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1082
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "Gigmates", "Gigmates\Gigmates.jsproj", "{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}"
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "gigmates", "gigmates\gigmates.jsproj", "{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,36 +19,36 @@ Global
 		Release|Windows-x86 = Release|Windows-x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Android.ActiveCfg = Debug|Android
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Android.Build.0 = Debug|Android
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Android.Deploy.0 = Debug|Android
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|iOS.ActiveCfg = Debug|iOS
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|iOS.Build.0 = Debug|iOS
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|iOS.Deploy.0 = Debug|iOS
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Windows-ARM.ActiveCfg = Debug|Windows-ARM
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Windows-ARM.Build.0 = Debug|Windows-ARM
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Windows-ARM.Deploy.0 = Debug|Windows-ARM
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Windows-x64.ActiveCfg = Debug|Windows-x64
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Windows-x64.Build.0 = Debug|Windows-x64
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Windows-x64.Deploy.0 = Debug|Windows-x64
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Windows-x86.ActiveCfg = Debug|Windows-x86
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Windows-x86.Build.0 = Debug|Windows-x86
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Debug|Windows-x86.Deploy.0 = Debug|Windows-x86
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Android.ActiveCfg = Release|Android
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Android.Build.0 = Release|Android
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Android.Deploy.0 = Release|Android
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|iOS.ActiveCfg = Release|iOS
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|iOS.Build.0 = Release|iOS
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|iOS.Deploy.0 = Release|iOS
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Windows-ARM.ActiveCfg = Release|Windows-ARM
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Windows-ARM.Build.0 = Release|Windows-ARM
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Windows-ARM.Deploy.0 = Release|Windows-ARM
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Windows-x64.ActiveCfg = Release|Windows-x64
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Windows-x64.Build.0 = Release|Windows-x64
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Windows-x64.Deploy.0 = Release|Windows-x64
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Windows-x86.ActiveCfg = Release|Windows-x86
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Windows-x86.Build.0 = Release|Windows-x86
-		{6B90D9BD-C21C-4053-8F93-19FF63F7D45E}.Release|Windows-x86.Deploy.0 = Release|Windows-x86
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Android.ActiveCfg = Debug|Android
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Android.Build.0 = Debug|Android
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Android.Deploy.0 = Debug|Android
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|iOS.ActiveCfg = Debug|iOS
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|iOS.Build.0 = Debug|iOS
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|iOS.Deploy.0 = Debug|iOS
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Windows-ARM.ActiveCfg = Debug|Windows-ARM
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Windows-ARM.Build.0 = Debug|Windows-ARM
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Windows-ARM.Deploy.0 = Debug|Windows-ARM
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Windows-x64.ActiveCfg = Debug|Windows-x64
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Windows-x64.Build.0 = Debug|Windows-x64
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Windows-x64.Deploy.0 = Debug|Windows-x64
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Windows-x86.ActiveCfg = Debug|Windows-x86
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Windows-x86.Build.0 = Debug|Windows-x86
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Debug|Windows-x86.Deploy.0 = Debug|Windows-x86
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Android.ActiveCfg = Release|Android
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Android.Build.0 = Release|Android
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Android.Deploy.0 = Release|Android
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|iOS.ActiveCfg = Release|iOS
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|iOS.Build.0 = Release|iOS
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|iOS.Deploy.0 = Release|iOS
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Windows-ARM.ActiveCfg = Release|Windows-ARM
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Windows-ARM.Build.0 = Release|Windows-ARM
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Windows-ARM.Deploy.0 = Release|Windows-ARM
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Windows-x64.ActiveCfg = Release|Windows-x64
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Windows-x64.Build.0 = Release|Windows-x64
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Windows-x64.Deploy.0 = Release|Windows-x64
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Windows-x86.ActiveCfg = Release|Windows-x86
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Windows-x86.Build.0 = Release|Windows-x86
+		{F3D13C8C-87DF-44F0-BB94-F8C49117FEBB}.Release|Windows-x86.Deploy.0 = Release|Windows-x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
