@@ -1,10 +1,38 @@
 ﻿/*CSS FOR THE HOME PAGE*/
-body{
-
-}
-
 .homeitem
 {
-    margin:20px;
+    margin:10px;
 
 }
+
+#inputBoxes {
+    position: absolute;
+    top: 40%;
+    margin-right:10%;
+}
+
+
+.actionbuttons {
+    position: absolute;
+    top: 200px;
+    left: 35px;
+}
+
+/*CSS FOR DESKTOP SCREENS */
+@media only screen and (min-width:768px)
+{
+    #inputBoxes {
+        position: absolute;
+        top: 25%;
+        left: 40%;
+    }
+
+    #inputBoxes h1 {
+        position: absolute;
+        top: 10%;
+        left:25%;
+    }
+
+}
+
+

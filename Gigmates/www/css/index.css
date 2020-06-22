@@ -1,6 +1,6 @@
-* {
+/** {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
+}*/
 
 body {
     /*-webkit-touch-callout: none;
@@ -31,6 +31,7 @@ body {
     background-image: url(/www/images/banner.png);
     background-size: contain;
     background-color: #32383d;
+    background-position:center;
 
     font-family: 'RobotoRegular', 'Droid Sans', 'Segoe UI', Segoe, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
     font-size: 12px;
@@ -39,14 +40,19 @@ body {
 
 .midpart {
     position: absolute;
+    display:table;
     height: 100%;
     background-image: url('../images/banner.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position:center;
+}
+.midrowcontain{
+    display:table-row;
+
 }
 
-
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+@media screen and (min-width:400px) {
 
   
     .app {

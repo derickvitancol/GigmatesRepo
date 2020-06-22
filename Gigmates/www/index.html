@@ -1,81 +1,95 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
+<head>
     <!--
         Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
         For details, see http://go.microsoft.com/fwlink/?LinkID=617521
     -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-        <link rel="stylesheet" type="text/css" href="css/index.css"/>
-        <link rel="stylesheet" type="text/css" href="css/homepage.css"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
-        <title>Gigmates</title>
-    </head>
-    <body>
-        <div class="navbar navbar-expand-md navbar-dark bg-dark d-none d-md-block">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="images/logo.png" />
-                </a>
-                <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarContents">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/homepage.css" />
 
-                <div class="collapse navbar-collapse" id="navbarContents">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/www/index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">FAQ</a>
-                        </li>
+    <title>Gigmates</title>
+</head>
+<body>
+    <!-- Navbar for DESKTOP ONLY -->
+    <div class="navbar navbar-expand-md navbar-dark bg-dark d-none d-md-block">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" />
+            </a>
+            <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarContents">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarContents">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/www/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                    </li>
+
+                </ul>
             </div>
         </div>
+    </div>
+    <!-- Content part -->
+    <div class="container-fluid midpart">
+        <div class="container w-100 h-100">
 
-        <div class="container-fluid midpart">
-            <div class="container">
-                <img class="d-md-none" src="images/logo.png" />
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control homeitem" id="usernameBox" placeholder="Enter username" />
-                    </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="passwordBox" placeholder="Password" />
-                    </div>
+            <img class="d-md-none" src="images/logo.png" />
 
-                    <div class="btn btn-dark">
-                        Login
-                    </div>
-                    <div class="btn btn-light">
-                        <a href="signup.html">Sign Up</a>
-                    </div>
+            <div class="container d-flex flex-column w-75 text-center" id="inputBoxes">
+
+                <div class="input-group col-xs-12 col-sm-12 col-md-4 col lg-3">
+                    <input type="text" class="form-control w-75 p-2" id="usernameBox" placeholder="Enter username" />
                 </div>
+
+                <div class="input-group col-xs-12 col-sm-12 col-md-4 col lg-3">
+                    <input type="text" class="form-control p-2" id="passwordBox" placeholder="Password" />
+                </div>
+
+                <div class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col lg-3">
+                    Login
+                </div>
+
+                <div class="btn btn-light col-xs-12 col-sm-12 col-md-4 col lg-3">
+                    <a href="signup.html">Sign Up</a>
+                </div>
+
             </div>
+
+
+
+
+
+        </div>
             
-                
-        </div>
+    </div>
+
+    <!-- Footer (for desktop ONLY) -->
 
 
-        <script type="text/javascript" src="scripts/jquery-3.5.1.slim.min.js"></script>
-        <script type="text/javascript" src="scripts/popper.min.js"></script>
-        <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-        <script type="text/javascript" src="scripts/bootstrap.js"></script>
 
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <!--<script type="text/javascript" src="scripts/index.js"></script>-->
-    </body>
+    <script type="text/javascript" src="scripts/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" src="scripts/popper.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.js"></script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <!--<script type="text/javascript" src="scripts/index.js"></script>-->
+</body>
 </html>
