@@ -70,6 +70,12 @@ body {
         background-repeat: no-repeat;
     }
 
+    .midpart h1{
+        position:absolute;
+        top:10%;
+        left:50%;
+    }
+
 }
 
 h1 {
