@@ -5,62 +5,23 @@
 
 }
 
-#inputBoxes {
-    position: absolute;
-    top: 40%;
-    margin-right:10%;
-}
-
-#inputBoxes div{
-    margin-bottom:4%;
-}
-
-/*.actionbuttons {
-
-}*/
-
-.midpart img{
-    position:absolute;
-    top:20%;
-    left:20%
-}
-
 
 
 /*CSS FOR DESKTOP SCREENS */
 @media only screen and (min-width:768px)
 {
+
+    
+
     body{
         padding-bottom:0;
         margin:0;
-
-
     }
 
-    #inputBoxes {
-        position: absolute;
-        top: 25%;
-        left: 40%;
-    }
+    
 
-    #inputBoxes h1 {
-        position: absolute;
-        top: 10%;
-        left:25%;
-    }
-
-    #inputBoxes div {
-        margin-bottom: 1%;
-    }
-
-    .footer{
-        
-        position:fixed;
-        bottom:0;
-        height:15%;
-        width:100%;
-        background-color:aqua;
-        margin-bottom:0%;
+    .midpart{
+        height:75%;
     }
 
 }

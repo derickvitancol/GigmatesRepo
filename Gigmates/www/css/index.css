@@ -26,13 +26,12 @@ body {
     text-transform:uppercase;
     width:100%;*/
     /*position:absolute;*/
+    margin:0;
     height: 100%;
-    width: 100%;
     background-image: url(/www/images/banner.png);
     background-size: contain;
-    background-color: #32383d;
+    /*background-color: #32383d;*/
     background-position:center;
-
     font-family: 'RobotoRegular', 'Droid Sans', 'Segoe UI', Segoe, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
     font-size: 12px;
 }
@@ -40,10 +39,9 @@ body {
 
 .midpart {
     position: absolute;
-    display:table;
     height: 100%;
     background-image: url('../images/banner.png');
-    background-size: cover;
+    background-size:cover;
     background-repeat: no-repeat;
     background-position:center;
 }
@@ -63,17 +61,10 @@ body {
 
     
     .midpart {
-        
         height: 100%;
         background-image: url('../images/banner.png');
         background-size: cover;
         background-repeat: no-repeat;
-    }
-
-    .midpart h1{
-        position:absolute;
-        top:10%;
-        left:50%;
     }
 
 }
