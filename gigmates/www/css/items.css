@@ -1,7 +1,5 @@
 ﻿.signmid {
-    position: absolute;
     background: linear-gradient(to top right,#7A0BB9 0%,#3F0548 30%,#130417 100%);
-    height: 75%;
 }
 
 
@@ -24,6 +22,11 @@ input[type=text]:focus
 {
     background-color: transparent;
     color: #FFFFFF;
+}
+
+.mainpart {
+    position: absolute;
+    height: 100%;
 }
 
 /*ITEM STYLE IF OPENED IN DESKTOP*/
@@ -51,6 +54,11 @@ input[type=text]:focus
         width: 100%;
         background-color: aqua;
         margin-bottom: 0%;
+    }
+
+    .mainpart {
+        position: absolute;
+        height: 75%;
     }
 
 

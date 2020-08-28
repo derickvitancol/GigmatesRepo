@@ -1,6 +1,8 @@
 ﻿$(document).ready(function () {
     $("#proceedButton").click(function ()
     {
+
+        
         var NewPersonInfo = {
             firstname: document.getElementById("FirstnameBox").value,
             lastname: document.getElementById("LastnameBox").value,
