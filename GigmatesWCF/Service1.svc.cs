@@ -8,6 +8,7 @@ using System.ServiceModel.Activation;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace GigmatesWCF
 {
@@ -17,6 +18,8 @@ namespace GigmatesWCF
 
     public class Service1 : IGigmatesService
     {
+        private SqlConnection conn;
+
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -39,8 +42,8 @@ namespace GigmatesWCF
         {
             return "Hello werld";
         }
-        
-        [WebInvoke(Method="GET",BodyStyle =WebMessageBodyStyle.Wrapped,ResponseFormat = WebMessageFormat.Json)]
+
+        //[WebInvoke(Method="GET",BodyStyle =WebMessageBodyStyle.Wrapped,ResponseFormat = WebMessageFormat.Json)]
         public string derick()
         {
             return "yow derick";
@@ -51,36 +54,39 @@ namespace GigmatesWCF
             throw new NotImplementedException();
         }
 
-        public string Signup(SignupUser user)
-        { 
+        public string RegisterUser(SignupUser user)
+        {
             string message;
             int ret;
 
-            //Add data source, initial catalog, password, etc.
-            SqlConnection conn = new SqlConnection("Data Source = ;Initial Catalog = ; Persist Security Info = True; User ID=sa; Password=;Pooling=False");
-            conn.Open();
-            SqlCommand sqlCommand = new SqlCommand("RegisterPerson", conn);
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-
-            sqlCommand.Parameters.AddWithValue("@rate", user.Rate);
-            sqlCommand.Parameters.AddWithValue("@location", user.Location);
-            sqlCommand.Parameters.AddWithValue("@username", user.Username);
-            sqlCommand.Parameters.AddWithValue("@password", user.Password);
-            sqlCommand.Parameters.AddWithValue("@bio", user.Biography);
-            sqlCommand.Parameters.AddWithValue("@personType", user.PersonType);
-            sqlCommand.Parameters.AddWithValue("@age", user.Age);
-
-            ret = sqlCommand.ExecuteNonQuery();
-            if (ret == 1)
+            //Replace data source, initial catalog, password, etc. in App config and in the code bellow
+            string connectionString = ConfigurationManager.ConnectionStrings["SuccinctlyDB"]?.ConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand sqlCommand = new SqlCommand("RegisterPerson", connection))
             {
-                message = "Sign up successful";
-            }
-            else
-            {
-                message = "Sign up failed";
-            }
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@rate", user.Rate);
+                sqlCommand.Parameters.AddWithValue("@location", user.Location);
+                sqlCommand.Parameters.AddWithValue("@username", user.Username);
+                sqlCommand.Parameters.AddWithValue("@password", user.Password);
+                sqlCommand.Parameters.AddWithValue("@bio", user.Biography);
+                sqlCommand.Parameters.AddWithValue("@personType", user.PersonType);
+                sqlCommand.Parameters.AddWithValue("@age", user.Age);
 
-            return message;
+                conn.Open();
+
+                ret = sqlCommand.ExecuteNonQuery();
+                if (ret == 1)
+                {
+                    message = "Sign up successful";
+                }
+                else
+                {
+                    message = "Sign up failed";
+                }
+
+                return message;
+            }
         }
     }
 

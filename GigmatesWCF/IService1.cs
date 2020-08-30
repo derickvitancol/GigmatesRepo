@@ -32,7 +32,7 @@ namespace GigmatesWCF
         // TODO: Add your service operations here
 
         [OperationContract]
-        string Signup(SignupUser user);
+        string RegisterUser(SignupUser user);
         
         //[OperationContract]
         //DataDB Login();
@@ -45,7 +45,6 @@ namespace GigmatesWCF
     [DataContract]
     public class SignupUser
     {
-        bool boolVal = true;
         string username, password, biography, location;
         float rate;
         int personType, age;
