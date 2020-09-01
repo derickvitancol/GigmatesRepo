@@ -43,46 +43,113 @@ namespace GigmatesWCF
             return "Hello werld";
         }
 
-        //[WebInvoke(Method="GET",BodyStyle =WebMessageBodyStyle.Wrapped,ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method="GET",BodyStyle =WebMessageBodyStyle.Wrapped,ResponseFormat = WebMessageFormat.Json)]
         public string derick()
         {
             return "yow derick";
         }
 
-        public string Login()
-        {
-            throw new NotImplementedException();
-        }
-
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
         public string RegisterUser(SignupUser user)
         {
             string message;
             int ret;
 
-            //Replace data source, initial catalog, password, etc. in App config and in the code bellow
-            string connectionString = ConfigurationManager.ConnectionStrings["SuccinctlyDB"]?.ConnectionString;
+            //Replace data source, initial catalog, password, etc. in App config and in the code below
+            //Add Connection strings to code and App config
+            string connectionString = ConfigurationManager.ConnectionStrings[""]?.ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlCommand sqlCommand = new SqlCommand("RegisterPerson", connection))
             {
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("@rate", user.Rate);
-                sqlCommand.Parameters.AddWithValue("@location", user.Location);
-                sqlCommand.Parameters.AddWithValue("@username", user.Username);
-                sqlCommand.Parameters.AddWithValue("@password", user.Password);
-                sqlCommand.Parameters.AddWithValue("@bio", user.Biography);
-                sqlCommand.Parameters.AddWithValue("@personType", user.PersonType);
-                sqlCommand.Parameters.AddWithValue("@age", user.Age);
-
-                conn.Open();
-
-                ret = sqlCommand.ExecuteNonQuery();
-                if (ret == 1)
+                try
                 {
-                    message = "Sign up successful";
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@firstname", user.Firstname);
+                    sqlCommand.Parameters.AddWithValue("@middlename", user.Middlename);
+                    sqlCommand.Parameters.AddWithValue("@lastname", user.Lastname);
+                    sqlCommand.Parameters.AddWithValue("@rate", user.Rate);
+                    sqlCommand.Parameters.AddWithValue("@location", user.Location);
+                    sqlCommand.Parameters.AddWithValue("@username", user.Username);
+                    sqlCommand.Parameters.AddWithValue("@password", user.Password);
+                    sqlCommand.Parameters.AddWithValue("@bio", user.Biography);
+                    sqlCommand.Parameters.AddWithValue("@personType", user.PersonType);
+                    sqlCommand.Parameters.AddWithValue("@age", user.Age);
+
+                    conn.Open();
+
+                    ret = sqlCommand.ExecuteNonQuery();
+
+                    if (ret == 1)
+                    {
+                        message = "Sign up successful";
+                    }
+                    else
+                    {
+                        message = "Sign up failed";
+                    }
                 }
-                else
+
+                catch (Exception)
                 {
-                    message = "Sign up failed";
+                    throw;
+                }
+                finally
+                {
+                    if (connection != null)
+                    {
+                        connection.Close();
+                    }
+                }
+
+                return message;
+            }
+        }
+
+        public string Login(LoginUser user)
+        {
+            string message;
+            int ret;
+
+            //Replace data source, initial catalog, password, etc. in App config and in the code below
+            //Add Connection strings to code and App config
+            string connectionString = ConfigurationManager.ConnectionStrings[""]?.ConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand sqlCommand = new SqlCommand("RegisterPerson", connection))
+            {
+                try
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+         
+                    sqlCommand.Parameters.AddWithValue("@username", user.Username);
+                    sqlCommand.Parameters.AddWithValue("@password", user.Password);
+
+                    SqlDataReader dataReader ;
+
+                    conn.Open();
+
+                    ret = sqlCommand.ExecuteNonQuery();
+
+                    
+                    if (ret == 1)
+                    {
+                        message = "Log in successful";
+                    }
+                    else
+                    {
+                        message = "Log in failed";
+                    }
+                }
+
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    if (connection != null)
+                    {
+                        connection.Close();
+                    }
                 }
 
                 return message;

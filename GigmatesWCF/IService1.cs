@@ -27,11 +27,17 @@ namespace GigmatesWCF
 
 
         [OperationContract]
-        //[WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
         string derick();
         // TODO: Add your service operations here
 
+
         [OperationContract]
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
+        string Login(LoginUser user);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
         string RegisterUser(SignupUser user);
         
         //[OperationContract]
@@ -45,9 +51,30 @@ namespace GigmatesWCF
     [DataContract]
     public class SignupUser
     {
-        string username, password, biography, location;
+        string firstname, lastname, middlename, username, password, biography, location;
         float rate;
         int personType, age;
+
+        [DataMember]
+        public string Firstname
+        {
+            get { return firstname; }
+            set { firstname = value; }
+        }
+
+        [DataMember]
+        public string Middlename
+        {
+            get { return middlename; }
+            set { middlename = value; }
+        }
+
+        [DataMember]
+        public string Lastname
+        {
+            get { return lastname; }
+            set { lastname = value; }
+        }
 
         [DataMember]
         public string Username
@@ -98,6 +125,27 @@ namespace GigmatesWCF
             set { age = value; }
         }
 
+
+    }
+
+    [DataContract]
+    public class LoginUser
+    {
+        string username, password;
+
+        [DataMember]
+        public string Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
+
+        [DataMember]
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        } 
 
     }
 
