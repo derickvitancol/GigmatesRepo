@@ -43,13 +43,13 @@ namespace GigmatesWCF
             return "Hello werld";
         }
 
-        [WebInvoke(Method="GET",BodyStyle =WebMessageBodyStyle.Wrapped,ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method="POST",BodyStyle =WebMessageBodyStyle.Wrapped,ResponseFormat = WebMessageFormat.Json)]
         public string derick()
         {
             return "yow derick";
         }
 
-        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
         public string RegisterUser(SignupUser user)
         {
             string message;
@@ -57,7 +57,7 @@ namespace GigmatesWCF
 
             //Replace data source, initial catalog, password, etc. in App config and in the code below
             //Add Connection strings to code and App config
-            string connectionString = ConfigurationManager.ConnectionStrings[""]?.ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["GigmatesDB"]?.ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlCommand sqlCommand = new SqlCommand("RegisterPerson", connection))
             {
@@ -111,8 +111,7 @@ namespace GigmatesWCF
             int ret;
 
             //Replace data source, initial catalog, password, etc. in App config and in the code below
-            //Add Connection strings to code and App config
-            string connectionString = ConfigurationManager.ConnectionStrings[""]?.ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["GigmatesDB"]?.ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlCommand sqlCommand = new SqlCommand("RegisterPerson", connection))
             {
