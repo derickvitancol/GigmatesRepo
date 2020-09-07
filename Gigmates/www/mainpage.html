@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' * data: gap: https://ssl.gstatic.com http://localhost:51320/Service1.svc/* 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; script-src 'self' 'unsafe-inline'">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/homepage.css" />
+    <link rel="stylesheet" type="text/css" href="css/items.css" />
+
+    <title>Gigmates</title>
+</head>
+<body style="background-color: rgb(100, 100, 128);">
+
+    <!-- Navbar for DESKTOP ONLY -->
+    <div class="navbar navbar-expand-md navbar-dark bg-dark d-none d-md-block nbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" />
+            </a>
+            <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarContents">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <div class="search">
+        <form class="search-form">
+            <input type="text" placeholder="Search for Gigmates..">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Up Coming Gigmates</a>
+        <a href="#news">MA?</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div include="form-input-select()">
+        <select required>
+            <!--
+              This is how we can do "placeholder" options.
+              note: "required" attribute is on the select
+            -->
+            <option value=""
+                    hidden>
+                Genre of Music
+            </option>
+
+            <!-- normal options -->
+            <option value="1">ALL</option>
+            <option value="2">ROCK</option>
+            <option value="3">POP</option>
+            <option value="4">JAZZ</option>
+            <option value="5">Option 5</option>
+        </select>
+    </div>
+    <div class="grid-container">
+        <div class="grid-item item1"><img src="images/photo04-01-m.jpg" alt="" width="250px" height="250px"></div>
+        <div class="grid-item item2">
+            <label style=" padding-top: 50px">Name of Gig</label> <br> <label><h1>Venue</h1></label><br><label><h1>Schedule</h1></label><br><button style=" background-color: #7f4caf; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;border-radius: 12px;">
+                Join
+            </button>
+        </div>
+
+    </div>
+    <div>
+        <br>
+        <center>
+            <button style=" background-color: #7f4caf; /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;border-radius: 12px;">
+                Create
+            </button>
+        </center>
+    </div>
+    <!-- Footer (for desktop ONLY) -->
+    <div class="footer p-2 bg-dark footstyle d-inline-block">
+        <div class="container-fluid p-2">
+            Hello
+        </div>
+    </div>
+    <style>
+
+        .vertical-menu {
+            width: 500px;
+        }
+
+            .vertical-menu a {
+                background-color: transparent;
+                color: white;
+                display: block;
+                padding: 12px;
+                text-decoration: none;
+            }
+
+                .vertical-menu a:hover {
+                    background-color: #ccc;
+                }
+
+                .vertical-menu a.active {
+                    color: lightblue;
+                }
+
+        .search {
+            border: 2px solid #3b1fa0;
+            overflow: auto;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+
+            .search input[type="text"] {
+                border: 0px;
+                width: 67%;
+                padding: 10px 10px;
+            }
+
+                .search input[type="text"]:focus {
+                    outline: 0;
+                }
+
+            .search input[type="submit"] {
+                border: 0px;
+                background: none;
+                background-color: #4932c9;
+                color: #fff;
+                float: right;
+                padding: 10px;
+                border-radius-top-right: 5px;
+                -moz-border-radius-top-right: 5px;
+                -webkit-border-radius-top-right: 5px;
+                border-radius-bottom-right: 5px;
+                -moz-border-radius-bottom-right: 5px;
+                -webkit-border-radius-bottom-right: 5px;
+                cursor: pointer;
+            }
+
+        /* ===========================
+        ====== Medua Query for Search Box ======
+        =========================== */
+
+        @media only screen and (min-width : 150px) and (max-width : 780px) {
+
+        {
+        }
+
+        .search {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        }
+
+        .topnav {
+            background-color: rgb(12, 8, 68);
+            overflow: hidden;
+        }
+
+            /* Style the links inside the navigation bar */
+            .topnav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                /* Change the color of links on hover */
+                .topnav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+                /* Add an active class to highlight the current page */
+                .topnav a.active {
+                    background-color: #5e20af;
+                    color: white;
+                }
+
+            /* Hide the link that should open and close the topnav on small screens */
+            .topnav .icon {
+                display: none;
+            }
+
+        .grid-container {
+            display: grid;
+            grid-gap: 10px;
+            background-color: #3f1e9b;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .item1 {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .item2 {
+            grid-column: 2 / span 3;
+            grid-row: 1;
+        }
+    </style>
+    <script type="text/javascript" src="scripts/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="scripts/popper.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="scripts/homepage.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
