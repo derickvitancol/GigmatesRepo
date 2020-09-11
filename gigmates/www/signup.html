@@ -2,11 +2,9 @@
 <html>
 <head>
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
@@ -16,7 +14,7 @@
 
     <title>Sign up</title>
 </head>
-<body onload="load()">
+<body>
     <!--NAvbaar-->
     <div class="navbar navbar-expand-md navbar-dark bg-dark d-none d-md-block nbar">
         <div class="container-fluid">
@@ -61,7 +59,7 @@
             <br />
             <input type="text" class="row form-control" placeholder="Password" id="PasswordBox" />
             <br />
-            <input type="text" class="row form-control" placeholder="Location" id="LocationBox" />
+            <input type="text" class="row form-control" placeholder="Address" id="AddressBox" />\
             <br />
 
             <center>
@@ -70,22 +68,21 @@
                     <option value="1">Male</option>
                     <option value="2">Female</option>
                 </select>
-                <input type="number" class="row form-control" placeholder="Age" id="AgeBox" style="color:black;" />
-       
+                <input type="number" class="row form-control" placeholder="Age" id="AgeBox" style="color:white;" />
 
 
-        <label for="UserTypebox" style="color:white;">Account Type</label>
-        <select name="usertype" id="UserTypebox">
-            <option value="1">Musician</option>
-            <option value="2">yung isa pa</option>
-        </select>
-        <br />
-        <div class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3" id="proceedButton">Proceed</div>
-        <a class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3" href="index.html">
-            <button class="bg-transparent border-0">Cancel</button>
-        </a>
-    </div>
-    </center>
+
+                <label for="UserTypebox" style="color:white;">Account Type</label>
+                <select name="usertype" id="UserTypebox">
+                    <option value="1">Musician</option>
+                    <option value="2">yung isa pa</option>
+                </select>
+                <br />
+                <button class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3" id="proceedButton" onclick="RegisterClicked()">Proceed</button>
+                <input type="button" class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3" onclick="CancelClicked()" placeholder="Cancel"/>
+                
+        </div>
+        </center>
     </div>
 
     <!-- Footer (for desktop ONLY) -->
@@ -93,13 +90,52 @@
         Hello
     </div>
 
-    <script type="text/javascript" src="scripts/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" src="scripts/jQuery/jquery-3.5.1.js"></script>
     <script type="text/javascript" src="scripts/popper.min.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.js"></script>
-    <script type="text/javascript" src="scripts/signup.js"></script>
 
-    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-    <script type="text/javascript" src="scripts/index.js"></script>
+
+
+    <!--<script type="text/javascript" src="scripts/index.js"></script>-->
+    <script>
+        function RegisterClicked() {
+
+            var personJSON = {
+                "newPerson": {
+                    Firstname: "Derick",
+                    Lastname: "Vitancol",
+                    Username: "derwil",
+                    Password: "123456",Location:"Cavite City",
+                    Age: 12,
+                    Type: 1,
+                    Gender: 1
+                }};
+            var val;
+            var prob;
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:51320/Service1.svc/Register",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data:JSON.stringify(personJSON)
+            }).done(function (data) {
+                alert(JSON.stringify(data.RegisterResult) + " is result");
+                console.log(datadata.RegisterResult);
+                alert("registered");
+                val = data.RegisterResult;
+            }).fail(function (prob) {
+                console.log(prob);
+                alert(prob);
+                val = prob;
+            });
+        }
+
+        function CancelClicked()
+        {
+            window.location.href = 'index.html';
+        }
+    </script>
+
 </body>
 </html>
