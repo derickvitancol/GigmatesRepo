@@ -63,3 +63,8 @@ input[type=text]:focus
 
 
 }
+
+/*FONT COLOR*/
+label {
+    color:white;
+}
