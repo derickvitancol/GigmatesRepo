@@ -61,28 +61,34 @@
             <br />
             <input type="text" class="row form-control" placeholder="Location" id="LocationBox" />
             <br />
-            <input type="number" class="row form-control" placeholder="Age" id="AgeBox" />
+            <input type="number" class="col-xl-2" placeholder="Age" id="AgeBox" />
+            <br />
+            <br />
 
+            <label for="gender">Gender</label>
+            <select name="gender" id="GenderBox">
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+            </select>
+
+
+
+
+            <label for="UserTypebox" style="color:white;">Account Type</label>
+            <select name="usertype" id="UserTypebox">
+                <option value="1">Musician</option>
+                <option value="2">yung isa pa</option>
+            </select>
+            <br />
+            <br />
             <center>
-                <label for="gender">Gender</label>
-                <select name="gender" id="GenderBox">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                </select>
-
-
-
-
-                <label for="UserTypebox" style="color:white;">Account Type</label>
-                <select name="usertype" id="UserTypebox">
-                    <option value="1">Musician</option>
-                    <option value="2">yung isa pa</option>
-                </select>
-                <br />
                 <button class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3" id="proceedButton" onclick="RegisterClicked()">Proceed</button>
-                <input type="button" class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3" onclick="CancelClicked()" placeholder="Cancel" />
+                
+                <button class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3 border-0"  onclick="CancelClicked()">Cancel</button>
 
-        </div>
+                <!--<input type="button" class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3" onclick="CancelClicked()" placeholder="Cancel" />-->
+
+</div>
         </center>
     </div>
 
