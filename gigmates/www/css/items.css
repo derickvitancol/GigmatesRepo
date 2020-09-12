@@ -24,6 +24,23 @@ input[type=text]:focus
     color: #FFFFFF;
 }
 
+input[type=number] {
+    background-color: transparent;
+    color: #FFFFFF;
+    border-bottom-width: medium;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-color: lightgray;
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+}
+
+input[type=number]:focus {
+    background-color: transparent;
+    color: #FFFFFF;
+}
+
 .mainpart {
     position: absolute;
     height: 100%;
@@ -69,4 +86,39 @@ label {
     color:white;
 }
 
-/*Button Cancel*/
+/*FOR MAINPAGE*/
+
+
+.botnav {
+    background-color: rgb(12, 8, 68);
+    overflow: hidden;
+    bottom: 0;
+}
+
+    /* Style the links inside the navigation bar */
+    .botnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        /* Change the color of links on hover */
+        .botnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add an active class to highlight the current page */
+        .botnav a.active {
+            background-color: #5e20af;
+            color: white;
+        }
+
+    /* Hide the link that should open and close the topnav on small screens */
+    .botnav .icon {
+        display: none;
+    }
