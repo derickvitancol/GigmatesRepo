@@ -59,29 +59,35 @@
             <br />
             <input type="text" class="row form-control" placeholder="Password" id="PasswordBox" />
             <br />
-            <input type="text" class="row form-control" placeholder="Address" id="AddressBox" />\
+            <input type="text" class="row form-control" placeholder="Location" id="LocationBox" />
+            <br />
+            <input type="number" class="col-1" placeholder="Age" id="AgeBox"  min="18" max="90"/>
+            <br />
             <br />
 
+            
+            <label for="gender">Gender</label>
+            <select name="gender" id="GenderBox">
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+            </select>
+           
+           
+
+            <label for="UserTypebox" style="color:white;">Account Type</label>
+            <select name="usertype" id="UserTypebox">
+                <option value="1">Musician</option>
+                <option value="2">yung isa pa</option>
+            </select>
+            <br />
+            <br />
             <center>
-                <label for="gender" style="color:white;">Gender</label>
-                <select name="gender" id="GenderBox">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                </select>
-                <input type="number" class="row form-control" placeholder="Age" id="AgeBox" style="color:white;" />
-
-
-
-                <label for="UserTypebox" style="color:white;">Account Type</label>
-                <select name="usertype" id="UserTypebox">
-                    <option value="1">Musician</option>
-                    <option value="2">yung isa pa</option>
-                </select>
-                <br />
                 <button class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3" id="proceedButton" onclick="RegisterClicked()">Proceed</button>
-                <input type="button" class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3" onclick="CancelClicked()" placeholder="Cancel"/>
-                
-        </div>
+
+                <button class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3 border-0" onclick="CancelClicked()">Cancel</button>
+
+                <!--<input type="button" class="btn btn-dark col-xs-12 col-sm-12 col-md-4 col-lg-3" onclick="CancelClicked()" placeholder="Cancel" />-->
+        
         </center>
     </div>
 
