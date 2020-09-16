@@ -6,10 +6,8 @@
         Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
         For details, see http://go.microsoft.com/fwlink/?LinkID=617521
     -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' * data: gap: https://ssl.gstatic.com http://localhost:51320/Service1.svc/* 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; script-src 'self' 'unsafe-inline'">
+
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -19,19 +17,8 @@
 
     <title>Gigmates</title>
 </head>
-<body style="background-color: rgb(100, 100, 128);">
+<body style="background-color: rgb(100, 100, 128);" onload="welcome()">
 
-    <!-- Navbar for DESKTOP ONLY -->
-    <div class="navbar navbar-expand-md navbar-dark bg-dark d-none d-md-block nbar">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" />
-            </a>
-            <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarContents">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </div>
     <div class="search">
         <form class="search-form">
             <input type="text" placeholder="Search for Gigmates..">
@@ -57,7 +44,7 @@
                 Genre of Music
             </option>
 
-            <!-- normal options -->
+            <!-- normal options OPTIONS MANGGAGALIGN SA DATABASE -->
             <option value="1">ALL</option>
             <option value="2">ROCK</option>
             <option value="3">POP</option>
@@ -96,12 +83,7 @@
             </button>
         </center>
     </div>
-    <!-- Footer (for desktop ONLY) -->
-    <div class="footer p-2 bg-dark footstyle d-inline-block">
-        <div class="container-fluid p-2">
-            Hello
-        </div>
-    </div>
+
     <style>
 
         .vertical-menu {
@@ -163,10 +145,6 @@
         =========================== */
 
         @media only screen and (min-width : 150px) and (max-width : 780px) {
-
-        {
-        }
-
         .search {
             width: 95%;
             margin: 0 auto;
@@ -231,13 +209,19 @@
             grid-row: 1;
         }
     </style>
-    <script type="text/javascript" src="scripts/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="scripts/jQuery/jquery-3.5.1.js"></script>
     <script type="text/javascript" src="scripts/popper.min.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.js"></script>
-    <script type="text/javascript" src="scripts/homepage.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-    <script type="text/javascript" src="scripts/index.js"></script>
+    <script>
+        var Firstname = localStorage.getItem("Firstname");
+        var Lastname = localStorage.getItem("Lastname");
+
+        function welcome()
+        {
+            alert("WELCOME " + Firstname + " " + Lastname);
+        }
+    </script>
+
 </body>
 </html>

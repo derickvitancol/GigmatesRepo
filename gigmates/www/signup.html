@@ -85,11 +85,6 @@
         </center>
     </div>
 
-    <!-- Footer (for desktop ONLY) -->
-    <div class="container-fluid footer p-2 bg-dark footstyle d-inline-block">
-        Hello
-    </div>
-
     <script type="text/javascript" src="scripts/jQuery/jquery-3.5.1.js"></script>
     <script type="text/javascript" src="scripts/popper.min.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
@@ -115,7 +110,7 @@
             var prob;
             $.ajax({
                 type: "POST",
-                url: "http://localhost:51320/Service1.svc/Register",
+                url: "http://localhost/GigmatesWCF/Service1.svc/Register",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 data:JSON.stringify(personJSON)
