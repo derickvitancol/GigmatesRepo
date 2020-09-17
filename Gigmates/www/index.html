@@ -50,37 +50,63 @@
     <script type="text/javascript" src="scripts/bootstrap.js"></script>
 
     <script>
-        jQuery.support.cors = true;
-        function LoginClicked() {
-            var uName = $("#usernameBox").val();
-            var pWord = $("#passwordBox").val();
-            var personDetails;
-            $.ajax({
+        
+        
+        function LoginClicked()
+        {
+            var uName = document.getElementById("usernameBox").value;
+            var pWord = document.getElementById("passwordBox").value;
 
-                type: "POST",
-                url: "http://localhost/GigmatesWCF/Service1.svc/Login",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify({ username: uName, password: pWord })
-
-            }).done(function (data) {
-                personDetails = data.LoginResult;
-                console.log(personDetails);
-                alert("Account Details: " + personDetails.Firstname + " " + personDetails.Lastname);
-                if (personDetails != undefined || personDetails != null) {
-                    localStorage.setItem("Firstname", personDetails.Firstname);
-                    localStorage.setItem("Lastname", personDetails.Lastname);
-                    //window.location.href = "mainpage.html";
+           
+            var  personDetails = {
+                "personLog": {
+                    Username: uName,
+                    Password: pWord
                 }
+            };
 
-            }).fail(function (prob) {
-                alert(prob);
+           
+            var xhr = $.ajax({
+                type: "POST",
+                url: "http://localhost/GigmatesService/Service1.svc/Login",
+                data: JSON.stringify(personDetails),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json"               
+            
+            }).done(function (data)
+                {
+                alert(data.LoginResult);
+                var personInfo = data.LoginResult;
+                personInfo = JSON.parse(personInfo);
+                alert("Hello " + personInfo.Firstname + " " + personInfo.Lastname);
+
+                localStorage.setItem("Firstname", personInfo.Firstname);
+                localStorage.setItem("Lastname", personInfo.Lastname);
+                localStorage.setItem("Username", personInfo.Username);
+                localStorage.setItem("Password", personInfo.Password);
+                localStorage.setItem("Age", personInfo.Age);
+                localStorage.setItem("Rate", personInfo.Rate);
+                localStorage.setItem("Bio", personInfo.Bio);
+                localStorage.setItem("Gender", personInfo.Gender);
+                localStorage.setItem("Location", personInfo.Location);
+                localStorage.setItem("ID", personInfo.ID);
+                localStorage.setItem("Type", personInfo.Type);
+
+                window.close = "index.html";
+                setTimeout(function () { document.location.href = "signup.html", 500 });
+                }
+            ).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status + ' ' + textStatus + ' ' + errorThrown.message);
             });
 
         }
 
-        function SignupClicked() {
-            window.location.href = "signup.html";
+        function SignupClicked()
+        {
+            alert("clicked signup");
+            window.close = 'index.html';
+            setTimeout(function () { document.location.href="signup.html",500 });
+            
         }
     </script>
 
