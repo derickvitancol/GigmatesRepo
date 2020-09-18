@@ -48,6 +48,7 @@
     <script type="text/javascript" src="scripts/popper.min.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.js"></script>
+    <script type="text/javascript"  src="cordova-1.7.0.js"></script>
 
     <script>
         
@@ -56,48 +57,54 @@
         {
             var uName = document.getElementById("usernameBox").value;
             var pWord = document.getElementById("passwordBox").value;
+            if (uName && pWord )
+            {
+                var personDetails = {
+                    "personLog": {
+                        Username: uName,
+                        Password: pWord
+                    }
+                };
 
-           
-            var  personDetails = {
-                "personLog": {
-                    Username: uName,
-                    Password: pWord
+
+                var xhr = $.ajax({
+                    type: "POST",
+                    url: "http://localhost/GigmatesService/Service1.svc/Login",
+                    data: JSON.stringify(personDetails),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+
+                }).done(function (data) {
+                    alert(data.LoginResult);
+                    var personInfo = data.LoginResult;
+                    personInfo = JSON.parse(personInfo);
+
+                    alert("Hello " + personInfo.Firstname + " " + personInfo.Lastname);
+
+                    localStorage.setItem("Firstname", personInfo.Firstname);
+                    localStorage.setItem("Lastname", personInfo.Lastname);
+                    localStorage.setItem("Username", personInfo.Username);
+                    localStorage.setItem("Password", personInfo.Password);
+                    localStorage.setItem("Age", personInfo.Age);
+                    localStorage.setItem("Rate", personInfo.Rate);
+                    localStorage.setItem("Bio", personInfo.Bio);
+                    localStorage.setItem("Gender", personInfo.Gender);
+                    localStorage.setItem("Location", personInfo.Location);
+                    localStorage.setItem("ID", personInfo.ID);
+                    localStorage.setItem("Type", personInfo.Type);
+
+                    window.close = "index.html";
+                    setTimeout(function () { document.location.href = "signup.html", 500 });
                 }
-            };
-
+                    ).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(XMLHttpRequest.status + ' ' + textStatus + ' ' + errorThrown.message);
+                    });
+            }
+            else {
+                alert("Please input your Username/Password!");
+            }
            
-            var xhr = $.ajax({
-                type: "POST",
-                url: "http://localhost/GigmatesService/Service1.svc/Login",
-                data: JSON.stringify(personDetails),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json"               
             
-            }).done(function (data)
-                {
-                alert(data.LoginResult);
-                var personInfo = data.LoginResult;
-                personInfo = JSON.parse(personInfo);
-                alert("Hello " + personInfo.Firstname + " " + personInfo.Lastname);
-
-                localStorage.setItem("Firstname", personInfo.Firstname);
-                localStorage.setItem("Lastname", personInfo.Lastname);
-                localStorage.setItem("Username", personInfo.Username);
-                localStorage.setItem("Password", personInfo.Password);
-                localStorage.setItem("Age", personInfo.Age);
-                localStorage.setItem("Rate", personInfo.Rate);
-                localStorage.setItem("Bio", personInfo.Bio);
-                localStorage.setItem("Gender", personInfo.Gender);
-                localStorage.setItem("Location", personInfo.Location);
-                localStorage.setItem("ID", personInfo.ID);
-                localStorage.setItem("Type", personInfo.Type);
-
-                window.close = "index.html";
-                setTimeout(function () { document.location.href = "signup.html", 500 });
-                }
-            ).fail(function (XMLHttpRequest, textStatus, errorThrown) {
-                alert(XMLHttpRequest.status + ' ' + textStatus + ' ' + errorThrown.message);
-            });
 
         }
 
