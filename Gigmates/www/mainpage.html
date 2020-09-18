@@ -14,102 +14,189 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/homepage.css" />
     <link rel="stylesheet" type="text/css" href="css/items.css" />
+    <!--Recently Added-->
+    <!--<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" data-main="scripts/startup" src="lib/require.2.1.8.js" async></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
 
     <title>Gigmates</title>
 </head>
 <body style="background-color: rgb(100, 100, 128);" onload="welcome()">
 
-    <div class="search">
-        <form class="search-form">
-            <input type="text" placeholder="Search for Gigs..">
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-    <div class="topnav" id="myTopnav">
-        <center>
-            <a href="#home" class="active">Upcoming Gigs</a>
-            <a href="#news">Gig Mates</a>
 
 
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </center>
-    </div>
-
-    <br />
-
-    <div include="form-input-select()">
-        <select required>
-            <!--
-              This is how we can do "placeholder" options.
-              note: "required" attribute is on the select
-            -->
-            <option value=""
-                    hidden>
-                Genre of Music
-            </option>
-
-            <!-- normal options OPTIONS MANGGAGALIGN SA DATABASE -->
-            <option value="1">ALL</option>
-            <option value="2">ROCK</option>
-            <option value="3">POP</option>
-            <option value="4">JAZZ</option>
-            <option value="5">Option 5</option>
-        </select>
-    </div>
 
 
-    <div class="grid-container">
-        <div class="grid-item item1"><img src="images/photo04-01-m.jpg" alt="" width="250px" height="250px"></div>
-        <div class="grid-item item2">
-            <label style=" padding-top: 50px">Name of Gig</label> <br> <label><h1>Venue</h1></label><br><label><h1>Schedule</h1></label><br><button style=" background-color: #7f4caf; /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;border-radius: 12px;">
-                Join
-            </button>
+
+
+
+    
+                <!--Search-->
+                <div class="search">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search for Gigs..">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+                <!--TOP NAV-->
+                <div class="topnav" id="myTopnav">
+                    <center>
+                        <a href="mainpage.html" class="active">Upcoming Gigs</a>
+                        <a href="#">Gig Mates</a>
+
+
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </center>
+                </div>
+
+                <br />
+
+                <div include="form-input-select()">
+                    <select required>
+                        <!--
+                          This is how we can do "placeholder" options.
+                          note: "required" attribute is on the select
+                        -->
+                        <option value=""
+                                hidden>
+                            Genre of Music
+                        </option>          
+                    </select>
+                </div>
+
+                <!-- BOTTOM NAVBAR -->
+                <nav class="navbar fixed-bottom navbar-dark bg-dark" id="Main">
+                    <div class="navbar-nav">
+                        <ul class="actions" id="main-menu">
+                            <li>
+                                <a class="nav-item nav-link active" href="mainpage.html">Home<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li>
+                                <a class="nav-item nav-link" href="#Notif">Notifications</a>
+                            </li>
+                            <li>
+                                <a class="nav-item nav-link" href="#">Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!--GIGS-->
+                <div class="grid-container">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <center>
+                                <img src="images/logo.png" alt="" width="184" height="29">
+                            </center>
+                            <div class="caption">
+                                <center>
+                                    <label><h1>Name of Gig</h1></label>
+                                </center>
+                                <br />
+                                <label><h4>Venue</h4></label>
+                                <br />
+                                <label><h4>Schedule</h4></label>
+                                <br />
+                                <center>
+                                    <p><a href="#" class="btn btn-primary" role="button">Join</a></p>
+                                </center>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Create Gig-->
+                <div>
+                    <br>
+                    <center>
+                        <button>
+                            Create Gig
+                        </button>
+                    </center>
+                </div>
+                <br />
+           
+
+
+    <!--NOTIFICATION
+    <div data-role="page" id="Notif" data-dialog="true">
+        <div role="main" class="ui-content">
+            <div id="wrapper">
+                <!-- BOTTOM NAVBAR
+                <nav class="navbar fixed-bottom navbar-dark bg-dark" id="Main">
+                    <div class="navbar-nav">
+                        <ul class="actions" id="main-menu">
+                            <li>
+                                <a class="nav-item nav-link active" href="mainpage.html">Home<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li>
+                                <a class="nav-item nav-link" href="#Notif">Notifications</a>
+                            </li>
+                            <li>
+                                <a class="nav-item nav-link" href="#">Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div id="page-wrapper">
+                    <div id="page-inner">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                            </div>
+                        </div>
+                        <!-- /. ROW  
+                        <hr />
+                    </div>
+                    <div class="row">
+                        <div class="grid-container">
+                            <div class="col-sm-6 col-md-6">
+                                <div class="thumbnail">
+                                    <center>
+                                        <img src="images/logo.png" alt="" width="184" height="29">
+                                    </center>
+                                    <div class="caption">
+                                        <center>
+                                            <label><h1>Name of Gig</h1></label>
+                                        </center>
+                                        <br />
+                                        <label><h4>Venue</h4></label>
+                                        <br />
+                                        <label><h4>Schedule</h4></label>
+                                        <br />
+                                        <center>
+                                            <p><a href="#" class="btn btn-primary" role="button">Join</a></p>
+                                        </center>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
-
-    </div>
-    <div>
-        <br>
-        <center>
-            <button style=" background-color: #7f4caf; /* Green */
-          border: none;
-          color: white;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;border-radius: 12px;">
-                Create
-            </button>
-        </center>
-    </div>
+    </div>-->
 
 
 
-    <!-- BOTTOM NAVBAR -->
-    <div class="botnav" id="myBotNav">
-        <a href="#home" class="active">Home</a>
-        <a href="#profile">Profile</a>
-
-
-    </div>
 
 
 
-    <!-- Footer (for desktop ONLY) -->
-    <div class="footer p-2 bg-dark footstyle d-inline-block">
-        <div class="container-fluid p-2">
-            Hello
-        </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
     <style>
 
         .vertical-menu {
@@ -178,44 +265,11 @@
 
         }
 
-        .topnav {
-            background-color: rgb(12, 8, 68);
-            overflow: hidden;
-        }
-
-            /* Style the links inside the navigation bar */
-            .topnav a {
-                float: left;
-                display: block;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-            }
-
-                /* Change the color of links on hover */
-                .topnav a:hover {
-                    background-color: #ddd;
-                    color: black;
-                }
-
-                /* Add an active class to highlight the current page */
-                .topnav a.active {
-                    background-color: #5e20af;
-                    color: white;
-                }
-
-            /* Hide the link that should open and close the topnav on small screens */
-            .topnav .icon {
-                display: none;
-            }
-
         .grid-container {
             display: grid;
             grid-gap: 10px;
             background-color: #3f1e9b;
-            padding: 10px;
+            padding: 15px;
         }
 
         .grid-item {
